@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgwys7qf7dmuf"]
+
+[ext_resource type="Script" uid="uid://cfjovpugbfcwk" path="res://Player/player_body_3d.gd" id="1_ex4vy"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://addons/gdquest_sophia/sophia_skin.tscn" id="2_5cw44"]
+[ext_resource type="PackedScene" uid="uid://dense4ah2pxo" path="res://Interact/interact_ray.tscn" id="3_xk1b3"]
+[ext_resource type="Texture2D" uid="uid://bcth7vdm1qv7k" path="res://Player/crosshair.png" id="4_5cw44"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dhalm"]
+radius = 0.362659
+height = 1.59275
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ex4vy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cw44"]
+bg_color = Color(0.133196, 0.133196, 0.133196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ce38"]
+bg_color = Color(0.999438, 0, 0.0562601, 1)
+
+[node name="PlayerBody3D" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.964239, 0)
+script = ExtResource("1_ex4vy")
+
+[node name="SophiaSkin" parent="." instance=ExtResource("2_5cw44")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01657, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000300169, -0.204995, -0.0200725)
+shape = SubResource("CapsuleShape3D_dhalm")
+debug_color = Color(2.31028e-06, 0.609025, 0.882436, 0.42)
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.903986, -0.427563, 0, 0.427563, 0.903986, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+shape = SubResource("SphereShape3D_ex4vy")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5099e-14, 0, 4.65708)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157399, 0)
+
+[node name="InteractRay" parent="Node3D" instance=ExtResource("3_xk1b3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Crosshair" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5cw44")
+
+[node name="HealthBar" type="ProgressBar" parent="UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 500.0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_5cw44")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3ce38")
+value = 100.0
+show_percentage = false

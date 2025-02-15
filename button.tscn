@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=4 uid="uid://fk3v3v01s0pu"]
+
+[ext_resource type="Script" uid="uid://iqrouwr7wqbv" path="res://Interact/interactable.gd" id="1_lt4la"]
+[ext_resource type="Texture2D" uid="uid://gqg48lh36fcv" path="res://Levels/textures/button-diff.png" id="1_vxja4"]
+[ext_resource type="Texture2D" uid="uid://cwf4istv1pad" path="res://Levels/textures/button-rough.png" id="2_lt4la"]
+[ext_resource type="Texture2D" uid="uid://ckqxuxuauel5g" path="res://Levels/textures/button-norm.png" id="3_4amfo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dueoy"]
+resource_name = "button"
+cull_mode = 2
+albedo_texture = ExtResource("1_vxja4")
+metallic_texture = ExtResource("2_lt4la")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_lt4la")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_4amfo")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0888j"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.1, -0.5, 1, 0.5, 1),
+"format": 34896613377,
+"index_count": 234,
+"index_data": PackedByteArray("AAABAAIAAgAEAAAAHQACAAEAHQAIAAIAAgAIAAQAHQABAB4AHwAIAB0AHwAdAB4ABwAEAAgAHwAJAAgABwAIAAkAHwAeACAAHwAMAAkAIAAMAB8ACQAMAAoACQAKAAcAIAAPAAwAHgALACAAIAALAA8AHgAFAAsAAQAFAB4ADQAKAAwADQAMAA8AAwAFAAEAAAADAAEABgALAAUAAwAGAAUADwALAA4ADwAOAA0ABgAOAAsAIQANAA4AIQAKAA0AIgAOAAYAIgAhAA4AAwAiAAYAIQAjAAoAIwAhACIAIwAHAAoAIwAEAAcAIwAiACQAIwAkAAQAJAAiAAMAJAAAAAQAJAADAAAAEAAlACYAEAARACUAEwAQACYAEQAnACUAJwAmACUAEwAmACgAFAATACgAJgApACgAFAAoACkAJwApACYAFQAUACkAEQAcACcAFQApACoAFgAVACoAHAArACcAHAAbACsAFgAqACwAKQAsACoAFwAWACwAGwAtACsALQAnACsAGwAaAC0AKQAnABIAKQASACwAEgAnAC0AFwAsAC4ALAASAC4AGAAXAC4AGAAuABIAGgAvAC0AEgAtAC8AGgAZAC8AGQAYABIAGQASAC8A"),
+"lods": [0.231906, PackedByteArray("AAABAAIAAAADAAEAAgAEAAAAAwAFAAEABQACAAEAAAAGAAMAAwAGAAUABwAAAAQABwAGAAAAAgAIAAQABwAEAAgABQAIAAIABwAIAAkABQAJAAgACQAKAAcABgALAAUACQAMAAoABQAMAAkADQAHAAoABwANAAYADQAKAAwABgAOAAsABgANAA4ABQALAA8ADwAMAAUADwALAA4ADQAMAA8ADwAOAA0AEAARABIAEwAQABIAFAATABIAFQAUABIAFgAVABIAFwAWABIAGAAXABIAGQAYABIAGgAZABIAGwAaABIAHAAbABIAEQAcABIAHAASABIA")],
+"name": "button",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("ZeYAAP//AACZGczM//8AAGXmzMz//wAAmRkAAP//AAD//wAAZeYAAAAAzMxl5gAAAAAAAGXmAAD//wAAmRkAAP//zMxl5gAA///MzJkZAABl5gAAAAAAAAAAzMyZGQAAZebMzAAAAACZGQAAAAAAAAAAAACZGQAAmRnMzAAAAAD/fzKz/z8AAP+fMrOSSAAA/3////+/AAD/XzKzkkgAAJJIMrP/XwAA/z8ys/9/AACSSDKz/58AAP9fMrNstwAA/38ys/+/AAD/nzKzbLcAAGy3MrP/nwAA/78ys/9/AABstzKz/18AAGXmzMxl5gAAmRnMzGXmAABl5szMmRkAAJkZzMyZGQAAmRkAAJkZAACZGQAAZeYAAGXmAACZGQAAZeYAAGXmAAD/n///kkgAAP9/////PwAAbLf///9fAAD/X///kkgAAJJI////XwAA/z////9/AAD/v////38AAJJI////nwAAbLf///+fAAD/X///bLcAAP+f//9stwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2kp8h"]
+resource_name = "models_Button"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.1, -0.5, 1, 0.5, 1),
+"attribute_data": PackedByteArray("I8lq/h+ds+gjybPoH51q/jTeoPKz2A74pM5F46bk1rem5EXjpM7Wt7PYDaM03nuoI8losh+dsZwjybGcH51osg+Ie6iPjQ2jn5fWt52BReOdgda3n5dF44+NDvgPiKDyn5dF46TOReMjybPoH52z6KTO1rcjyWiyH51osp+X1rf+//+//v+pykfm/3/+/1S1/v+pqv7//5/+/1SV/v+qiv7//3///1TVSOb///7//9/+/6nq/v9U9f7///+kzta3n5dF4yPJs+gfnbPopM5F4x+daLKfl9a3I8losiPJ1rcfnUXjH53WtyPJReNI5qnKSOb/v0jmVNVI5lS1R+b/30jmqapI5qnqR+b/n0jmVPVH5lSVR+aqinDR8IArxg6MS8oChUvKPpsrxjKU1OACha/Z8ID05DKU9OQOjK/ZUJ/U4D6bcNFQnyPJ1rcfnUXjI8lF4x+d1rc="),
+"format": 34896613399,
+"index_count": 234,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAgAEAAUAAgAGAAQABwAIAAYABwAGAAkACQAKAAsACQAMAAoADQAOAAwADQAMAA8ADwAQABEADwASABAAEwAUABIAEwASABUAFgAXABUAFgAVAAEANwA4ADkAOAAfADkAOQAfAB4AOAAYAB8AOQAeAB0AOQAdADcANwAdABwAGwAYADgANwAcABkAOgAbADgANwA6ADgANwAZADoAOgAaABsAOgAZABoAIAA7ADwAIAAhADsAIwAgADwAIQA9ADsAIwA8AD4AIQApAD0AJAAjAD4AKQA/AD0AJAA+AEAAKQArAD8AJQAkAEAAKwBBAD8AJQBAAEIAKwAsAEEAJgAlAEIALABDAEEAJgBCAEQALAAtAEMALQAqAEMALQAuACoAJwAmAEQAJwBEAEUAKAAnAEUAKABFACIARgBHAEgARgBJAEcARwBJAEoASwBGAEwATQBGAEsASQBGAE0ATQBLAE4ASQBNAE8ATwBNAFAASQBPAFEAUgBTAFQAVABTADIAVAAyADEAMgBTADAAVAAxADMAUgBUADMAUgAzAC8AUwA1ADAAUgAvADYAUwBVADUAUgBVAFMAVQBSADYAVQA0ADUAVQA2ADQA"),
+"lods": [0.231906, PackedByteArray("AAABAAIAAAADAAEAAgAEAAUAAgAGAAQABwAIAAYABwAGAAkACQAKAAsACQAMAAoADQAOAAwADQAMAA8ADwAQABEADwASABAAEwAUABIAEwASABUAFgAXABUAFgAVAAEAGAAZABoAGAAaABsAGAAcABkAGAAdABwAHgAdABgAGAAfAB4AIAAhACIAIwAgACIAJAAjACIAJQAkACIAJgAlACIAJwAmACIAKAAnACIAIQApACIAKQAqACIAKQArACoAKwAsACoALAAtACoALQAuACoALwAwADEAMQAwADIALwAxADMALwA0ADAAMAA0ADUANAAvADYA")],
+"material": SubResource("StandardMaterial3D_dueoy"),
+"name": "button",
+"primitive": 3,
+"uv_scale": Vector4(1.9733, 1.99976, 0, 0),
+"vertex_count": 86,
+"vertex_data": PackedByteArray("ZeYAAP///4+ZGczM//8GpWXmzMz//walmRkAAP///4///wAAZeZuuWXmAAD//wal///MzGXmbrn//wAAmRkZ3///AABl5sjM///MzJkZse1l5gAAAACd+f//AACZGbHtZebMzAAAnfmZGQAAAAD//2XmAAAAAP//mRnMzAAAnfkAAAAAmRmx7ZkZAAAAAJ35AADMzJkZse0AAAAAZebIzAAAAACZGRnfAADMzGXmbrmZGQAA//8GpQAAAABl5m65AADMzGXm/7///8zMZeb/v2XmzMz///+/mRnMzP///7///8zMmRn/v2XmzMwAAP+/mRnMzAAA/78AAMzMmRn/v/9/MrP/P////58ys5JI//D/f////7//v/9fMrOSSP/wkkgys/9fjOL/PzKz/39U1ZJIMrP/n0rK/18ys2y3usL/fzKz/7//v2y3MrP/X4zi/3////+//7//vzKz/39U1Wy3MrP/n0rK/58ys2y3usL/fzKz/7//v///AACZGf8/AAAAAGXm/z9l5gAA////P5kZAAD///8///8AAGXm/z+ZGQAAAAD/PwAAAACZGf8/ZeYAAAAA/z9l5szMmRn/v5kZzMxl5v+/mRnMzJkZ/79l5szMZeb/v/+f//+SSP/w/3////8///9st////1+M4v9f//+SSP/w/7////9/VNWSSP///1+M4my3////n0rK/z////9/VNX/n///bLe6wpJI////n0rK/1///2y3usJst////193z/9/////P3fP/5///5JId8+SSP///193z/9f//+SSHfPbLf///+fd8//v////393z/9/////v3fP/5///2y3d8+SSP///593z/9f//9st3fP/z////9/d89l5gAAmRn/P5kZAABl5v8/ZeYAAGXm/z+ZGQAAmRn/P/9/AADO3JnwZY/OXP9////DmtNCZY/OXMOa00L4rwZQmqRkW8i8ZmU2zsVdyLxmZTbOxV3+/8Jqwur/f8Xdx7Fl5TXDxd3HsWXlNcNj22PbBtAG0NPCOuXO3Jnw08I65f///3/+//9//v//f/7//3/+//9//v//f/7//3/+//9//7//P2+4j0f/f/9/j0dvuFVOqbFUVaqqs11LoqppVJb/f/9/qbFVTv9//3+qqlRVS6KzXVSWqmn/f/9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3/+//9//v//f/7//3/+//9/b7iPR/8//7+psVVOj0dvuKqqVVVVTqmxS6KzXVRVqqpUlqpps11LoqppVJZ/sr+mf7K/pn+yv6Z/sr+mf7K/pn+yv6Z/sr+mf7K/pn+yv6Z/sr+mf7K/pn+yv6YAAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0888j")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lj86r"]
+size = Vector3(1, 0.605103, 1)
+
+[node name="Button" type="StaticBody3D"]
+script = ExtResource("1_lt4la")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_2kp8h")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.198059, 0)
+shape = SubResource("BoxShape3D_lj86r")
